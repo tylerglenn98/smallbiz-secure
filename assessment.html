@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Assessment | SmallBiz Secure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SmallBiz Secure</h1>
+        <p>Small Business Cybersecurity Assessment</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>How Secure Is Your Business?</h2>
+            <p>
+                Answer the questions below to identify possible cybersecurity
+                risks within your business. Your answers will be used to provide
+                a security score and recommendations.
+            </p>
+        </section>
+
+        <form id="securityAssessment">
+
+            <section>
+                <h2>1. Passwords & MFA</h2>
+
+                <p>Do you use strong, unique passwords for your business accounts?</p>
+                <label>
+                    <input type="radio" name="passwords" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="passwords" value="no"> No
+                </label>
+
+                <p>Do you use multi-factor authentication (MFA) when available?</p>
+                <label>
+                    <input type="radio" name="mfa" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="mfa" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <h2>2. Digital Payments</h2>
+
+                <p>Is access to your payment or POS system limited to authorized employees?</p>
+                <label>
+                    <input type="radio" name="payments" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="payments" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <h2>3. Phishing Awareness</h2>
+
+                <p>Do you and your employees know how to recognize suspicious emails, messages, and links?</p>
+                <label>
+                    <input type="radio" name="phishing" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="phishing" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <h2>4. Wi-Fi Security</h2>
+
+                <p>Is your business Wi-Fi protected with a strong password?</p>
+                <label>
+                    <input type="radio" name="wifi" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="wifi" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <h2>5. Data Backups</h2>
+
+                <p>Do you regularly back up important business information?</p>
+                <label>
+                    <input type="radio" name="backups" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="backups" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <h2>6. Employee Access</h2>
+
+                <p>Do employees have their own accounts instead of sharing login information?</p>
+                <label>
+                    <input type="radio" name="access" value="yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="access" value="no"> No
+                </label>
+            </section>
+
+            <section>
+                <button type="submit">View My Security Results</button>
+            </section>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SmallBiz Secure</p>
+    </footer>
+
+</body>
+
+</html>
