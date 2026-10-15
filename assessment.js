@@ -48,19 +48,60 @@ document.addEventListener("DOMContentLoaded", function () {
             riskLevel = "High Risk";
         }
 
+        
         // Display results
         results.innerHTML = "";
+
+        results.className = "results-dashboard";
 
         const heading = document.createElement("h2");
         heading.textContent = "Your Cybersecurity Results";
 
-        const scoreText = document.createElement("p");
-        scoreText.textContent = "Security Score: " + percentage + "%";
+        const scoreCard = document.createElement("div");
+        scoreCard.className = "score-card";
+
+        const scoreText = document.createElement("h3");
+        scoreText.textContent = percentage + "%";
+
+        const scoreLabel = document.createElement("p");
+        scoreLabel.textContent = "Security Score";
 
         const riskText = document.createElement("p");
         riskText.textContent = "Risk Level: " + riskLevel;
 
-        results.append(heading, scoreText, riskText);
+        const riskClass =
+            riskLevel === "Low Risk" ? "low-risk" :
+            riskLevel === "Moderate Risk" ? "moderate-risk" :
+            "high-risk";
+
+        riskText.className = riskClass;
+
+        scoreCard.append(scoreLabel, scoreText, riskText);
+
+        const progressBar = document.createElement("div");
+        progressBar.className = "progress-bar";
+
+        const progressFill = document.createElement("div");
+        progressFill.className = "progress-fill " + riskClass;
+        progressFill.style.width = percentage + "%";
+
+        progressBar.appendChild(progressFill);
+
+        const explanation = document.createElement("p");
+        explanation.className = "risk-explanation";
+
+        if (riskLevel === "Low Risk") {
+            explanation.textContent =
+                "Your business has several good security practices in place. Continue reviewing and improving them.";
+        } else if (riskLevel === "Moderate Risk") {
+            explanation.textContent =
+                "Your business has some security measures in place, but there are areas that need improvement.";
+        } else {
+            explanation.textContent =
+                "Your answers suggest important cybersecurity weaknesses that should be addressed.";
+        }
+
+        results.append(heading, scoreCard, progressBar, explanation);
 
         const subheading = document.createElement("h3");
         subheading.textContent = "Recommended Improvements";
@@ -68,10 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (recommendations.length === 0) {
             const message = document.createElement("p");
-            message.textContent = "Great job! Continue following cybersecurity best practices.";
+            message.textContent =
+                "Great job! Continue following cybersecurity best practices.";
             results.appendChild(message);
         } else {
             const list = document.createElement("ul");
+            list.className = "recommendations-list";
 
             recommendations.forEach(function (recommendation) {
                 const item = document.createElement("li");
@@ -83,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         results.scrollIntoView({ behavior: "smooth" });
+
     });
 
 });
